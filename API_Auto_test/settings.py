@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apitest'
+    'apitest',
+    'product',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +84,7 @@ DATABASES = {
         'NAME': 'api_auto_test',
         'USER': 'root',
         'PASSWORD': '123456',
-        'HOST': '192.168.2.244',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
