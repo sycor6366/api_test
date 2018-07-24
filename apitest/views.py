@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import auth
+from .models import Apitest,Apistep
 from django.contrib.auth import authenticate,login
 # Create your views here.
 def test(request):
@@ -31,3 +32,17 @@ def home(request):
 def logout(request):
     auth.logout(request)
     return render(request,'login.html')
+
+#接口管理
+@login_required
+def apitest_manage(request):
+    apitest_list = Apitest.objects.all() #读取所有流程接口数据
+    username = request.session.get('user','') #读取浏览器登陆session
+    return render(request,"apitest_manage.html",{"user":username,"apitests":apitest_list}) #定义流程接口数据的变量并返回到前端
+
+#接口步骤管理
+@login_required
+def apistep_manage(request):
+    username = request.session.get('user','')
+    apistep_list = Apistep.objects.all()
+    return render(request,"apistep_manage.html",{"user":username,"apisteps":apistep_list})

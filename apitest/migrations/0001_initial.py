@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('apiurl', models.CharField(max_length=500, verbose_name='接口地址')),
                 ('apiparamvalue', models.CharField(max_length=5000, verbose_name='请求参数和值')),
                 ('apimethod', models.CharField(choices=[('get', 'get'), ('post', 'post'), ('put', 'put'), ('delete', 'delete'), ('patch', 'patch')], default='get', max_length=200, null=True, verbose_name='请求方法')),
-                ('apiresult', models.CharField(max_length=20000, verbose_name='预期结果')),
+                ('apiresult', models.CharField(max_length=10000, verbose_name='预期结果')),
                 ('apistatus', models.BooleanField(verbose_name='是否通过')),
                 ('create_time', models.DateTimeField(auto_now=True, verbose_name='创建时间')),
             ],

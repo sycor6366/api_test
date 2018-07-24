@@ -29,12 +29,12 @@ class Apistep(models.Model):
     #地址
     apiurl = models.CharField('接口地址',max_length=500)
     #请求参数和值
-    apiparamvalue = models.CharField('请求参数和值',max_length=800)
+    apiparamvalue = models.CharField('请求参数和值',max_length=5000)
     REQUEST_METHOD = (('get','get'),('post','post'),('put','put'),('delete','delete'),('patch','patch'))
     #请求方法
     apimethod = models.CharField('请求方法',choices=REQUEST_METHOD,default='get',max_length=200,null=True)
     #预期接口
-    apiresult = models.CharField('预期结果',max_length=1000)
+    apiresult = models.CharField('预期结果',max_length=10000)
     #测试结果
     apistatus = models.BooleanField('是否通过')
     #创建时间，自动获取
