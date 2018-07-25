@@ -22,8 +22,10 @@ class Apitest(models.Model):
 
 
 class Apistep(models.Model):
-    #关联接口ID
+    # 关联接口ID
     Apitest = models.ForeignKey('Apitest',on_delete=models.CASCADE,)
+    # 测试步骤
+    apistep = models.CharField('测试步骤',max_length=100,null=True)
     #接口标题
     apiname = models.CharField('接口名称',max_length=100)
     #地址

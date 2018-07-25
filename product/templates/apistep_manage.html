@@ -37,13 +37,13 @@
             <tbody>
             {% for apistep in apisteps %}
             <tr>
-                <td>{{ apistep.Apitest.Product.productname }}</td>
+                <td>{{ apistep.Apitest.product.productname }}</td>
                 <td>case{{ apistep.Apitest.id}}：{{ apistep.Apitest.apitestname }}</td>
                 <td>{{ apistep.apistep }}：{{ apistep.apiname }}</td>
                 <td>{{ apistep.apiurl }}</td>
                 <td>{{ apistep.apiparamvalue }}</td>
                 <td>{{ apistep.apiresult }}</td>
-            <td>{% if apistep.apistatus ==1 %}
+            <td>{% if apistep.apistatus == 1 %}
                 <a style="color:green">{{ apistep.apistatus }}</a>
             {% else %}
                 <a style="color:red">{{ apistep.apistatus }}</a>
